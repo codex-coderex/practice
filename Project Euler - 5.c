@@ -1,15 +1,16 @@
+// Online C compiler to run C program online
 #include <stdio.h>
 #include <stdlib.h>
 
-int gcd(int x, int y);
-int lcm(int x, int y);
+long long gcd();
+long long lcm();
 
 int main() {
     
-    int size = 20;
-    int n = 1;
+    int size = 25;
+    long long n = 1;
     
-    for(int i = 1; i < size; i++){
+    for(int i = 1; i <= size; i++){
         n = lcm(n, i);
     }
     
@@ -25,14 +26,14 @@ int main() {
     
     */ 
     
-    printf("%d",n);
+    printf("%lld",n);
     
 }
 
-int gcd(int x, int y){
+long long gcd(long long x, long long y){
     
     while(y != 0){
-        int temp = y;
+        long long temp = y;
         y = x % y;
         x = temp;
     }
@@ -40,8 +41,8 @@ int gcd(int x, int y){
     return x;
 }
 
-int lcm(int x, int y){
-  int res = abs(x * y)/(gcd(x, y));
+long long lcm(long long x, long long y){
+  long long res = (x /(gcd(x, y))) * y;
   
   return res;
 }
